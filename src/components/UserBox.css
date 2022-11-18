@@ -1,0 +1,53 @@
+.UserBox {
+    width: 200px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.UserBox img{
+    width: 60px;
+    height: 60px;
+}
+
+.UserBox:hover .UserBox__controls {
+    display: block;
+}
+
+.UserBox p{
+    width: 140px;
+    height: 100%;
+    text-align: left;
+    padding-left: 20px;
+    line-height: 80px;
+    font-size: 24px;
+}
+
+.UserBox__controls {
+    width: 200px;
+    height: auto;
+    position: absolute;
+    border-left: 1px solid #444;
+    border-right: 1px solid #444;
+    top: 80px;
+    display: none;
+}
+
+.UserBox__controls li{
+    width: 200px;
+    height: 80px;
+    line-height: 80px;
+    font-size: 24px;
+    border-bottom: 1px solid #444;
+    color: blueviolet;
+    list-style: none;
+    cursor: pointer;
+    
+}
+
+.UserBox__controls li:hover{
+    background-color: blue;
+    color: aqua;
+}
