@@ -1,11 +1,15 @@
 import React from 'react';
 import './Slide.css';
 
-function Slide({image}) {
+function Slide({image, setIsInfo, isInfo }) {
+
+  function getInfo(){
+    setIsInfo(!isInfo)
+  }
 
   return (
     <div className="Slide">
-     <img src={image} alt='Slide'/>
+     <img src={image} onClick={getInfo} alt='Slide'/>
     </div>
   )
 }

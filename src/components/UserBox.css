@@ -33,6 +33,7 @@
     border-right: 1px solid #444;
     top: 80px;
     display: none;
+    z-index: 100;
 }
 
 .UserBox__controls li{
