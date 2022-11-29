@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './Slaiderbox.css';
 
-function Slaiderbox({setIsInfo, isInfo}) {
+function Slaiderbox() {
     var settings ={
         dots: true,
         infinite: true,
@@ -19,9 +19,9 @@ function Slaiderbox({setIsInfo, isInfo}) {
   return (
     <div className="Slaiderbox">
         <Slider {...settings}>
-           <Slide image={slide1} setIsInfo={setIsInfo} isInfo={isInfo} alt=""/>
-           <Slide image={slide2} setIsInfo={setIsInfo} isInfo={isInfo} alt=""/>
-           <Slide image={slide3} setIsInfo={setIsInfo} isInfo={isInfo} alt=""/>
+           <Slide id={1} image={slide1} />
+           <Slide id={2} image={slide2} />
+           <Slide id={3} image={slide3} />
         </Slider>
     </div>
   )

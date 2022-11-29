@@ -1,7 +1,7 @@
 import React from 'react';
 import './Slide.css';
 
-function Slide({image, setIsInfo, isInfo }) {
+function Slide({image, id}) {
 
   function getInfo(){
     setIsInfo(!isInfo)
@@ -9,9 +9,17 @@ function Slide({image, setIsInfo, isInfo }) {
 
   return (
     <div className="Slide">
-     <img src={image} onClick={getInfo} alt='Slide'/>
+     <img  id={`slide${id}`} src={image} onClick={getInfo} alt='Slide'/>
     </div>
   )
+}
+
+function mapDispatchToProps(dispatch){
+  return {
+    setIsInfoFunction: isInfo => {
+      dispatch(setModalWindowAction(modalWindow))
+    }
+  }
 }
 
 export default Slide
