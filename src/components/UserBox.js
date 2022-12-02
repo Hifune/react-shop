@@ -2,19 +2,34 @@ import React from 'react';
 import avatar from '../foto/123.png'
 import './UserBox.css';
 
-function UserBox() {
+import { connect } from "react-redux"
+import setIsOpenModalBoxAction from '../store/actions/isOpenModalBoxAction'
+
+function UserBox({setIsOpenModalBoxFunction}) {
+
+function openModalBox(){
+  setIsOpenModalBoxFunction(true)
+}
   return (
     <div className="UserBox">
         <img src={avatar} alt=""/>
         <p>Гость</p>
         <div className='UserBox__controls'>
             <ul>
-                <li>Регистрация</li>
-                <li>Вход</li>
+                <li onClick={openModalBox}>Регистрация</li>
+                <li onClick={openModalBox}>Вход</li>
             </ul>
         </div>
     </div>
   );
 }
 
-export default UserBox;
+function mapDispatchToProps(dispatch){
+  return {
+    setIsOpenModalBoxFunction: isOpenModalBox => {
+      dispatch(setIsOpenModalBoxAction(isOpenModalBox))
+    }
+  }
+}
+
+export default connect(null, mapDispatchToProps)(UserBox);

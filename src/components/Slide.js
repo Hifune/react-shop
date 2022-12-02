@@ -1,10 +1,18 @@
 import React from 'react';
 import './Slide.css';
 
-function Slide({image, id}) {
+import { connect } from "react-redux"
+import setIsInfoAction from '../store/actions/isInfoAction'
 
-  function getInfo(){
-    setIsInfo(!isInfo)
+function Slide({image, id, setIsInfoFunction, isInfo}) {
+
+  function getInfo(e){
+    let id = e.target.id
+    if (isInfo === ''){
+      setIsInfoFunction(id)
+    }else{
+      setIsInfoFunction('')
+    }
   }
 
   return (
@@ -14,12 +22,18 @@ function Slide({image, id}) {
   )
 }
 
+function mapStateToProps(state){
+  return{
+    isInfo: state.getIsInfo.isInfo
+  }
+}
+
 function mapDispatchToProps(dispatch){
   return {
     setIsInfoFunction: isInfo => {
-      dispatch(setModalWindowAction(modalWindow))
+      dispatch(setIsInfoAction(isInfo))
     }
   }
 }
 
-export default Slide
+export default connect(mapStateToProps, mapDispatchToProps)(Slide);
