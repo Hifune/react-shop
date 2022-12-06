@@ -7,8 +7,9 @@ import setIsOpenModalBoxAction from '../store/actions/isOpenModalBoxAction'
 
 function UserBox({setIsOpenModalBoxFunction}) {
 
-function openModalBox(){
-  setIsOpenModalBoxFunction(true)
+function openModalBox(e){
+  let id = e.target.id
+  setIsOpenModalBoxFunction(id)
 }
   return (
     <div className="UserBox">
@@ -16,8 +17,8 @@ function openModalBox(){
         <p>Гость</p>
         <div className='UserBox__controls'>
             <ul>
-                <li onClick={openModalBox}>Регистрация</li>
-                <li onClick={openModalBox}>Вход</li>
+                <li id='registration' onClick={openModalBox}>Регистрация</li>
+                <li id='login' onClick={openModalBox}>Вход</li>
             </ul>
         </div>
     </div>
