@@ -34,6 +34,7 @@
     top: 80px;
     display: none;
     z-index: 100;
+
 }
 
 .UserBox__controls li{
@@ -51,4 +52,7 @@
 .UserBox__controls li:hover{
     background-color: blue;
     color: aqua;
+}
+.UserBox__controls a {
+    text-decoration: none;
 }

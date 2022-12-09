@@ -1,5 +1,5 @@
 const initialState = {
-    isOpenModalBox: 'registration'
+    isOpenModalBox: 'none'
 }
 
 export default function getIsOpenModalBox(state = initialState, action){

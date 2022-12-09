@@ -4,12 +4,12 @@ import UserBox from './UserBox';
 import './Header.css';
 import Navigation from './Navigation';
 
-function Header() {
+function Header({isAuth, setIsAuth}) {
   return (
     <div className="Header">
       <Logo/>
       <Navigation/>
-      <UserBox/>
+      <UserBox isAuth={isAuth} setIsAuth={setIsAuth} />
     </div>
   );
 }

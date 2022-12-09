@@ -19,9 +19,15 @@
     list-style: none;
     font-size: 16px;
     cursor: pointer;
+    margin: 28px;
 }
 
 .Navigation li:hover{
     background-color: #fff;
     color:  rgb(101, 101, 199)
+}
+
+.Navigation a{
+    color: #fff;
+    text-decoration: none;
 }
