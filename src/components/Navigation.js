@@ -7,7 +7,7 @@ function Navigation() {
     <div className="Navigation">
       <ul>
         <Link to='/' ><li>Главная</li></Link>
-        <li>Каталог</li>
+        <Link to='/catalog' ><li>Каталог</li></Link>
         <li>Сотрудники</li>
         <li>Контакты</li>
       </ul>

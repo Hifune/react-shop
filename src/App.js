@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { Routes, Route } from "react-router-dom";
 import Header from './components/Header';
 import Main from './vievs/Main';
+import Catalog from './vievs/Catalog';
 import Room from './vievs/Room';
 import ModalBox from './components/ModalBox';
 import Registration from './components/Registration';
@@ -27,6 +28,7 @@ function App({isOpenModalBox}) {
       <Routes>
         <Route path='/' element={ <Main/> }/>
         <Route path='/room' element={<Room/>}/>
+        <Route path='/catalog' element={<Catalog/>}/>
       </Routes>
      
       { isOpenModalBox !== 'none' ? <ModalBox>{boxes[isOpenModalBox]}</ModalBox> : null }
