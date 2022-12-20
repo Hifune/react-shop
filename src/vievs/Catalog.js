@@ -1,13 +1,17 @@
 import React, {useState} from 'react';
 import backetIcon from '../foto/backet.png'
 import ModalBox from '../components/ModalBox';
+import Backet from '../components/Backet';
 import './Catalog.css';
 
-function Catalog() {
+import { connect } from "react-redux"
+import setIsOpenModalBoxAction from '../store/actions/isOpenModalBoxAction'
+
+function Catalog({products, setIsOpenModalBoxFunction}) {
 
     const[count, setCount] = useState(0)
-    const[products, setProducts] = useState([])
-    const[backet, setBacket] = useState(false)
+
+
 
     let info = {
         'product1': 'Товар 1',
@@ -24,9 +28,15 @@ function Catalog() {
   return (
     <div className="Catalog">
         <div className='Catalog__panel'>
-            <div onClick={() => setBacket(true)} className='Catalog__basket'>
+            <div onClick={() => setIsOpenModalBoxFunction('backet')} className='Catalog__basket'>
                 <img src={backetIcon}/>
+                {
+                count > 0
+                ?
                 <span>{count}</span>
+                :
+                null
+                }
             </div>
         </div>
         <div className='Catalog_products'>
@@ -43,20 +53,18 @@ function Catalog() {
                 <button id='product3' onClick={addProduct}>В корзину</button>
             </div>
         </div>
-        {
-        backet
-        ?
-        <ModalBox>
-            {
-                () => products.map((item) => `${item}`)
-            }
-        </ModalBox>
-        :
-        null
-        }
+
     </div>
 
   );
 }
 
-export default Catalog;
+function mapDispatchToProps(dispatch){
+    return {
+      setIsOpenModalBoxFunction: isOpenModalBox => {
+        dispatch(setIsOpenModalBoxAction(isOpenModalBox))
+      }
+    }
+  }
+
+export default connect(null, mapDispatchToProps)(Catalog);
