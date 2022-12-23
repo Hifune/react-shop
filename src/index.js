@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom"; //для работы роутов на сервере
+import { HashRouter } from 'react-router-dom'; //для работы роутов на со статическими файлами
 import './index.css';
 import App from './App';
 
@@ -14,9 +15,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-    <BrowserRouter>
+    <HashRouter>
       <App />
-    </BrowserRouter>
+    </HashRouter>
     </Provider>
   </React.StrictMode>
 );

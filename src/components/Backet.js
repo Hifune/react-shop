@@ -1,25 +1,32 @@
 import React, {useEffect} from 'react';
+import Product from './Product'
 import './Backet.css';
 
 function Backet({products}) {
 
-useEffect(()=> {
+const items = []
+for (let elem of products){
+  items.push(<Product product={elem} />)
+}
 
-    let basket = document.getElementById('basket')
+// useEffect(()=> {
 
-    products.forEach(element => {
-            let p = document.createElement('p')
-            p.textContent = element
-            basket.appendChild(p)
-    });
+//     let basket = document.getElementById('basket')
 
-}, [products])
+//     products.forEach(element => {
+//             let p = document.createElement('p')
+//             p.textContent = element
+//             basket.appendChild(p)
+//     });
+
+// }, [products])
    
   return (
-        <div id='basket' className='Basket' >
+        <div id='backet' className='Backet' >
+            {items}
 
         </div> 
-  )
+  );
 }
 
 export default Backet;
